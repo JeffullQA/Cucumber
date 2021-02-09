@@ -2,7 +2,7 @@ const assert = require('assert');
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 function DisplayScore(file) {
-    
+    return 'Number';
 }
 
 Given('I want to display the score of a client', function () {
@@ -15,7 +15,7 @@ When('I click on the client file', function () {
     this.clickFile = DisplayScore(this.file);
   });
 
-Then('the score is displayed', function (expectedAnswer) {
+Then('the score is displayed {string}', function (expectedAnswer) {
     // Write code here that turns the phrase above into concrete actions
     assert.equal(this.clickFile, expectedAnswer);
   });
